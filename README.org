@@ -1,5 +1,5 @@
 #+TITLE: Readme
-#+PROPERTY: header-args:bash    :results verbatim :exports both
+#+PROPERTY: header-args:bash
 
 * Overview
 This repo records my experience about gentoo usage.
@@ -30,7 +30,8 @@ make localyesconfig
 - https://wiki.gentoo.org/wiki/Intel
 - https://wiki.gentoo.org/wiki/Wifi
 ** Drivers
-#+begin_src bash
+#+begin_src bash     :results verbatim :exports both
+
 lspci -k
 #+end_src
 
@@ -79,7 +80,8 @@ lspci -k
 #+end_example
 
 
-#+begin_src bash
+#+begin_src bash     :results verbatim :exports both
+
 lsusb
 
 #+end_src
@@ -99,7 +101,8 @@ Bus 001 Device 005: ID 060b:7a03 Solid Year USB Keyboard
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 #+end_example
 
-#+begin_src bash :dir /usr/src/linux
+#+begin_src bash :dir /usr/src/linux     :results verbatim :exports both
+
 lshw | grep -i driver | perl -pe 's/^.*driver=(\S+).*$/$1/g;' | sort -u
 #+end_src
 
