@@ -147,4 +147,110 @@ iucode_tool -S -l /lib/firmware/intel-ucode/*
 : selected microcodes:
 :   001/001: sig 0x000906ea, pf_mask 0x22, 2021-01-05, rev 0x00ea, size 102400
 
+** Docker support
+#+begin_src bash :results verbatim :exports both
+/usr/share/docker/contrib/check-config.sh /usr/linux/src/.config
+#+end_src
+
+#+RESULTS:
+#+begin_example
+[37minfo: reading kernel config from /proc/config.gz ...[m
+
+Generally Necessary:
+- [37mcgroup hierarchy[m: [32mcgroupv2[m
+- [37mCONFIG_NAMESPACES[m: [32menabled[m
+- [37mCONFIG_NET_NS[m: [32menabled[m
+- [37mCONFIG_PID_NS[m: [32menabled[m
+- [37mCONFIG_IPC_NS[m: [32menabled[m
+- [37mCONFIG_UTS_NS[m: [32menabled[m
+- [37mCONFIG_CGROUPS[m: [32menabled[m
+- [37mCONFIG_CGROUP_CPUACCT[m: [32menabled[m
+- [37mCONFIG_CGROUP_DEVICE[m: [32menabled[m
+- [37mCONFIG_CGROUP_FREEZER[m: [32menabled[m
+- [37mCONFIG_CGROUP_SCHED[m: [32menabled[m
+- [37mCONFIG_CPUSETS[m: [32menabled[m
+- [37mCONFIG_MEMCG[m: [32menabled[m
+- [37mCONFIG_KEYS[m: [32menabled[m
+- [37mCONFIG_VETH[m: [32menabled[m
+- [37mCONFIG_BRIDGE[m: [32menabled[m
+- [37mCONFIG_BRIDGE_NETFILTER[m: [32menabled[m
+- [37mCONFIG_IP_NF_FILTER[m: [32menabled[m
+- [37mCONFIG_IP_NF_TARGET_MASQUERADE[m: [32menabled[m
+- [37mCONFIG_NETFILTER_XT_MATCH_ADDRTYPE[m: [32menabled[m
+- [37mCONFIG_NETFILTER_XT_MATCH_CONNTRACK[m: [32menabled[m
+- [37mCONFIG_NETFILTER_XT_MATCH_IPVS[m: [32menabled[m
+- [37mCONFIG_NETFILTER_XT_MARK[m: [32menabled[m
+- [37mCONFIG_IP_NF_NAT[m: [32menabled[m
+- [37mCONFIG_NF_NAT[m: [32menabled[m
+- [37mCONFIG_POSIX_MQUEUE[m: [32menabled[m
+
+Optional Features:
+- [37mCONFIG_USER_NS[m: [32menabled[m
+- [37mCONFIG_SECCOMP[m: [32menabled[m
+- [37mCONFIG_CGROUP_PIDS[m: [32menabled[m
+- [37mCONFIG_MEMCG_SWAP[m: [32menabled[m
+    [1;30m(cgroup swap accounting is currently enabled)[m
+- [37mCONFIG_BLK_CGROUP[m: [32menabled[m
+- [37mCONFIG_BLK_DEV_THROTTLING[m: [32menabled[m
+- [37mCONFIG_CGROUP_PERF[m: [32menabled[m
+- [37mCONFIG_CGROUP_HUGETLB[m: [32menabled[m
+- [37mCONFIG_NET_CLS_CGROUP[m: [32menabled[m
+- [37mCONFIG_CGROUP_NET_PRIO[m: [32menabled[m
+- [37mCONFIG_CFS_BANDWIDTH[m: [32menabled[m
+- [37mCONFIG_FAIR_GROUP_SCHED[m: [32menabled[m
+- [37mCONFIG_RT_GROUP_SCHED[m: [32menabled[m
+- [37mCONFIG_IP_NF_TARGET_REDIRECT[m: [32menabled[m
+- [37mCONFIG_IP_VS[m: [32menabled[m
+- [37mCONFIG_IP_VS_NFCT[m: [32menabled[m
+- [37mCONFIG_IP_VS_PROTO_TCP[m: [32menabled[m
+- [37mCONFIG_IP_VS_PROTO_UDP[m: [32menabled[m
+- [37mCONFIG_IP_VS_RR[m: [32menabled[m
+- [37mCONFIG_EXT4_FS[m: [32menabled[m
+- [37mCONFIG_EXT4_FS_POSIX_ACL[m: [32menabled[m
+- [37mCONFIG_EXT4_FS_SECURITY[m: [32menabled[m
+- Network Drivers:
+  - "[34moverlay[m":
+    - [37mCONFIG_VXLAN[m: [32menabled[m
+    - [37mCONFIG_BRIDGE_VLAN_FILTERING[m: [32menabled[m
+      Optional (for encrypted networks):
+      - [37mCONFIG_CRYPTO[m: [32menabled[m
+      - [37mCONFIG_CRYPTO_AEAD[m: [32menabled[m
+      - [37mCONFIG_CRYPTO_GCM[m: [32menabled[m
+      - [37mCONFIG_CRYPTO_SEQIV[m: [32menabled[m
+      - [37mCONFIG_CRYPTO_GHASH[m: [32menabled[m
+      - [37mCONFIG_XFRM[m: [32menabled[m
+      - [37mCONFIG_XFRM_USER[m: [32menabled[m
+      - [37mCONFIG_XFRM_ALGO[m: [32menabled[m
+      - [37mCONFIG_INET_ESP[m: [32menabled[m
+  - "[34mipvlan[m":
+    - [37mCONFIG_IPVLAN[m: [32menabled[m
+  - "[34mmacvlan[m":
+    - [37mCONFIG_MACVLAN[m: [32menabled[m
+    - [37mCONFIG_DUMMY[m: [32menabled[m
+  - "[34mftp,tftp client in container[m":
+    - [37mCONFIG_NF_NAT_FTP[m: [32menabled[m
+    - [37mCONFIG_NF_CONNTRACK_FTP[m: [32menabled[m
+    - [37mCONFIG_NF_NAT_TFTP[m: [32menabled[m
+    - [37mCONFIG_NF_CONNTRACK_TFTP[m: [32menabled[m
+- Storage Drivers:
+  - "[34maufs[m":
+    - [1mCONFIG_AUFS_FS[m: [1;31mmissing[m
+  - "[34mbtrfs[m":
+    - [1mCONFIG_BTRFS_FS[m: [1;31mmissing[m
+    - [1mCONFIG_BTRFS_FS_POSIX_ACL[m: [1;31mmissing[m
+  - "[34mdevicemapper[m":
+    - [37mCONFIG_BLK_DEV_DM[m: [32menabled[m
+    - [37mCONFIG_DM_THIN_PROVISIONING[m: [32menabled[m
+  - "[34moverlay[m":
+    - [37mCONFIG_OVERLAY_FS[m: [32menabled[m
+  - "[34mzfs[m":
+    - [1m/dev/zfs[m: [1;31mmissing[m
+    - [1mzfs command[m: [1;31mmissing[m
+    - [1mzpool command[m: [1;31mmissing[m
+
+Limits:
+[37m- /proc/sys/kernel/keys/root_maxkeys[m: [32m1000000[m
+
+#+end_example
+
 ** Tips
