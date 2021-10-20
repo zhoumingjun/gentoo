@@ -253,4 +253,10 @@ Limits:
 
 #+end_example
 
+*** package list
+#+begin_src
+#vaapi driver
+sudo emerge -av libva-intel-media-driver gentoo
+
+#+end_src
 ** Tips
